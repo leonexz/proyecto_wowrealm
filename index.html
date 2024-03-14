@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wow Peru</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v19.0"
+        nonce="25XlhwMu"></script>
+
+</head>
+<header class="hero">
+    <nav class="nav container">
+        <nav class="nav__logo">
+            <a href="#"><img src="./img/wow-logooo (1).png" class="nav__img"></a>
+        </nav>
+        <ul class="nav__link nav__link--menu click nav__link--show">
+            <li class="nav__items playbutton" id="nav__unete">
+                <a href="#" class="nav__links" id="nav__textounete">Únete</a>
+            </li>
+            <li class="nav__items">
+                <a href="#" class="nav__links">Tienda</a>
+            </li>
+            <li class="nav__items primary_menu-dropdown">
+                <a href="#" class="nav__links" id="dropdown-toggle" role="button">
+                    Comunidad</a>
+                <ul class="nav__dropdown" id="dropdown-menu">
+                    <li><a href="#" class="nav__links--dropdown">foro</a></li>
+                    <li><a href="#" class="nav__links--dropdown">Nuestros reinos</a></li>
+                    <li><a href="#" class="nav__links--dropdown">Armeria</a></li>
+                    <li><a href="#" class="nav__links--dropdown">Clasificacion Jcj</a></li>
+                    <li><a href="#" class="nav__links--dropdown">Miticas+</a></li>
+                    <li><a href="#" class="nav__links--dropdown">Clasificacion Fio</a></li>
+                    <li><a href="#" class="nav__links--dropdown">Bandas</a></li>
+                    <li><a href="#" class="nav__links--dropdown">Addons</a></li>
+                </ul>
+            </li>
+            <li class="nav__items">
+                <a href="#" class="nav__links">FAQ</a>
+            </li>
+            <li class="nav__items">
+                <a href="#" class="nav__links">Ayuda</a>
+            </li>
+            <li class="nav__items secondary_menu-dropdown">
+                <a href="#" class="nav__links" id="opcionmas" role="button">Más</a>
+                <ul class="nav__dropdown" id="submenumas">
+                    <li><a href="#" class="nav__links--dropdown">Bugtracker</a></li>
+                    <li><a href="#" class="nav__links--dropdown">Noticias</a></li>
+                    <li><a href="#" class="nav__links--dropdown">Armeria</a></li>
+                    <li><a href="#" class="nav__links--dropdown">Historial de cambios</a></li>
+                    <li><a href="#" class="nav__links--dropdown">MoP-Actualizaciones</a></li>
+                    <li><a href="#" class="nav__links--dropdown">Legion-Actualizaciones</a></li>
+                    <li><a href="#" class="nav__links--dropdown">BFA-Actualizaciones</a></li>
+                    <li><a href="#" class="nav__links--dropdown">DF-Actualizacioness</a></li>
+                </ul>
+            </li>
+            <img src="./img/close.svg" class="nav__close">
+        </ul>
+        <div class="menu">
+            <img src="./img/menu.svg" class="nav__menuimg" alt="">
+        </div>
+    </nav>
+    <section class="nav__form" id="formulario">
+
+        <form class="form">
+            <section class="nav__h">
+                <h1>Únanse</h1>
+                <h3 class="camp_batalla">Al campo de batalla!</h3>
+            </section>
+            <div class="input__group tooltip">
+                <div class="input__group--addon">
+                    <img src="./img/usuario_icono.svg" alt="icono_usuario" class="nav__icon-img">
+                </div>
+                <input type="text" class="username" placeholder="Nombre de usuario" pattern=".{3,12}"
+                    oninput="validarCampo(this)">
+                <span class="error-message" id="username-error"></span>
+                <div class="tooltiptext" id="username-tooltip">Ingrese su nombre de usuario</div>
+                <div class="check-icon check-icon-green" id="username-check-green">&#10003;</div>
+                <div class="check-icon check-icon-red" id="username-check-red">&#10007;</div>
+
+            </div>
+            <div class="input__group tooltip">
+                <div class="input__group--addon">
+                    <img src="./img/email_icono.svg" alt="icono_usuario" class="nav__icon-img">
+                </div>
+                <input type="email" class="email" placeholder="Email" required oninput="validarCampo(this)">
+                <span class="error-message" id="email-error"></span>
+                <div class="tooltiptext" id="email-tooltip">Ingrese su correo</div>
+                <div class="check-icon check-icon-green" id="email-check-green">&#10003;</div>
+                <div class="check-icon check-icon-red" id="email-check-red">&#10007;</div>
+
+            </div>
+            <div class="input__group tooltip">
+                <div class="input__group--addon">
+                    <img src="./img/password_icono.svg" alt="icono_usuario" class="nav__icon-img">
+                </div>
+                <input type="password" class="password" placeholder="Contraseña" pattern=".{6,16}" required
+                    title="de 6 a 16 caracteres" oninput="validarCampo(this)">
+                <span class="error-message" id="password-error"></span>
+                <div class="tooltiptext" id="password-tooltip">Ingrese su contraseña</div>
+                <div class="check-icon check-icon-green" id="password-check-green">&#10003;</div>
+                <div class="check-icon check-icon-red" id="password-check-red">&#10007;</div>
+
+            </div>
+            <div class="input__group tooltip">
+                <div class="input__group--addon">
+                    <img src="./img/password_icono.svg" alt="icono_usuario" class="nav__icon-img">
+                </div>
+                <input type="password" class="password--confirm" placeholder="Contraseña (confirmacion)"
+                    pattern=".{6,16}" required title="de 6 a 16 caracteres" oninput="validarConfirmacion(this)">
+                <span class="error-message" id="confirm-password-error"></span>
+                <div class="tooltiptext" id="confirm-password-tooltip">Ingrese de nuevo su contraseña</div>
+                <div class="check-icon check-icon-green" id="confirm-password-check-green">&#10003;</div>
+                <div class="check-icon check-icon-red" id="confirm-password-check-red">&#10007;</div>
+
+            </div>
+            <section class="nav__button">
+                <a href="#" class="login__container">Registrarse</a>
+                <p class="nav__p--letrao"> O</p>
+                <a href="#" class="connect__container">Conectarse</a>
+            </section>
+
+        </form>
+    </section>
+</header>
+
+<body>
+    <section class="nav__news">
+        <div class="tarjeta1y2">
+            <div class="tarjeta">
+                <div class="cuerpo cuerpo1">
+                    <img src="./img/March_of_the_Legion2.jpg" alt="muestra">
+                    <h1 style="text-align: center;margin: 0; margin-bottom: 10px;">¡La legion regresa a Azeroth!</h1>
+                    <p style="text-align: justify;font-size: 15px; padding: 12px;margin: 0; margin-bottom: 10px;">Asi es
+                        gente, tanto la horda
+                        como la
+                        alianza
+                        tendran que unir fuerzas<br>
+                        para vencer al enemigo del que por tantas expansiones se ha hablado "LA LEGION ARDIENTE"</p>
+                    <div class="pie">
+                        <a href="#">Más información</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="tarjeta2">
+                <div class="cuerpo cuerpo2">
+                    <img src="./img/WowChakraAjustesBandas.jpg" alt="muestra">
+                    <h1 style="text-align: left;margin: 0; margin-bottom: 10px;">¡Bandas habilitadas!</h1>
+                    <p
+                        style="text-align: justify;font-size: 15px; padding: 12px;color: #f53404;margin: 0; margin-bottom: 10px;">
+                        5 de Marzo de
+                        2024</p>
+                    <p
+                        style="text-align: justify;font-size: 15px; padding: 12px;color: #2c056a;margin: 0; margin-bottom: 10px;">
+                        Se han
+                        habilitados las bandas y mazmorras<br>
+                        referentes a la expansion actual<br></p>
+                    <div class="pie">
+                        <a href="#">Más información</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+    <section class="nav__facepage">
+        <div class="fanpage">
+            <p class="siguenos" style="text-align: center; padding-top: 30px;color: black;font-size: 25px;"><img
+                    src="./img/facebook.svg" class="nav__icon--fanpage--img">Siguenos
+            </p>
+            <div class="fb-page" data-href="https://www.facebook.com/firestorm.spanish" data-tabs="timeline"
+                data-height="" data-width="750px" data-small-header="false" data-adapt-container-width="true"
+                data-hide-cover="false" data-show-facepile="true">
+                <blockquote cite="https://www.facebook.com/firestorm.spanish" class="fb-xfbml-parse-ignore">
+                    <a href="https://www.facebook.com/firestorm.spanish">Firestorm ES</a>
+                </blockquote>
+            </div>
+        </div>
+
+    </section>
+    <section class="ranking">
+        <div class="tarjeta3">
+            <div class="cuerpo__tarjeta3">
+                <img src="./img/wow_dragonflight.jpg" alt="muestra">
+                <h1 class="titulo">Nuevo blog
+                    de WOW
+                    DRAGONFLIGHT</h1>
+                <p class="subtitulo">Dragonflight</p>
+                <p class="aviso__blog">¡BLOG DE
+                    DESARROLLO DE DRAGONFLIGHT!</p>
+            </div>
+            <div class="pie__tarjeta3">
+                <a href="#">Más información</a>
+            </div>
+        </div>
+        <div class="nav__clasi">
+            <div class="ranking__block ranking">
+                <div class="nav row">
+                    <img src="./img/trofeo.svg" alt="" style="height: 40px;">
+                    <p
+                        style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 40px;color: aliceblue;">
+                        Clasificatorias</p>
+                </div>
+                <div class="tabs">
+                    <div class="tab-container">
+                        <div id="tab4" class="tab">
+                            <a href="#tab4">RBG</a>
+                            <div class="tab-content">
+                                <p class="puesto">1</p><img src="./img/pj_icon.png" alt="" class="nav_iconpj">
+                                <div class="name__pj">COACH</div>
+                                <div class="puntaje__pj">2600</div>
+                            </div>
+                            <div class="tab-content">
+                                <p class="puesto">2</p><img src="./img/pj_icon.png" alt="" class="nav_iconpj">
+                                <div class="name__pj">NICKDSR</div>
+                                <div class="puntaje__pj">3600</div>
+                            </div>
+                            <div class="tab-content">
+                                <p class="puesto">3</p><img src="./img/pj_icon.png" alt="" class="nav_iconpj">
+                                <div class="name__pj">ROCHELLE</div>
+                                <div class="puntaje__pj">1600</div>
+                            </div>
+                            <div class="tab-content">
+                                <p class="puesto">4</p><img src="./img/pj_icon.png" alt="" class="nav_iconpj">
+                                <div class="name__pj">ELLIS</div>
+                                <div class="puntaje__pj">2600</div>
+                            </div>
+                            <div class="tab-content">
+                                <p class="puesto">5</p><img src="./img/pj_icon.png" alt="" class="nav_iconpj">
+                                <div class="name__pj">BILL</div>
+                                <div class="puntaje__pj">4300</div>
+                            </div>
+                        </div>
+                        <div id="tab3" class="tab">
+                            <a href="#tab3">P.logros</a>
+                            <div class="tab-content">
+                                <p class="puesto">1</p><img src="./img/pj_icon.png" alt="" class="nav_iconpj">
+                                <div class="name__pj">EZEZSXD</div>
+                                <div class="puntaje__pj">2100</div>
+                            </div>
+                            <div class="tab-content">
+                                <p class="puesto">2</p><img src="./img/pj_icon.png" alt="" class="nav_iconpj">
+                                <div class="name__pj">DESAD</div>
+                                <div class="puntaje__pj">2200</div>
+                            </div>
+                            <div class="tab-content">
+                                <p class="puesto">3</p><img src="./img/pj_icon.png" alt="" class="nav_iconpj">
+                                <div class="name__pj">DREADSD</div>
+                                <div class="puntaje__pj">2500</div>
+                            </div>
+                            <div class="tab-content">
+                                <p class="puesto">4</p><img src="./img/pj_icon.png" alt="" class="nav_iconpj">
+                                <div class="name__pj">REGINALD</div>
+                                <div class="puntaje__pj">1500</div>
+                            </div>
+                            <div class="tab-content">
+                                <p class="puesto">5</p><img src="./img/pj_icon.png" alt="" class="nav_iconpj">
+                                <div class="name__pj">ELLISXD</div>
+                                <div class="puntaje__pj">2600</div>
+                            </div>
+                        </div>
+                        <div id="tab2" class="tab">
+                            <a href="#tab2">3C3</a>
+                            <div class="tab-content">
+                                <p class="puesto">1</p><img src="./img/pj_icon.png" alt="" class="nav_iconpj">
+                                <div class="name__pj">Tharlasx</div>
+                                <div class="puntaje__pj">3110</div>
+                            </div>
+                            <div class="tab-content">
+                                <p class="puesto">2</p><img src="./img/pj_icon.png" alt="" class="nav_iconpj">
+                                <div class="name__pj">frederecksx</div>
+                                <div class="puntaje__pj">6500</div>
+                            </div>
+                            <div class="tab-content">
+                                <p class="puesto">3</p><img src="./img/pj_icon.png" alt="" class="nav_iconpj">
+                                <div class="name__pj">Ferchux</div>
+                                <div class="puntaje__pj">1500</div>
+                            </div>
+                            <div class="tab-content">
+                                <p class="puesto">4</p><img src="./img/pj_icon.png" alt="" class="nav_iconpj">
+                                <div class="name__pj">CASTLESX</div>
+                                <div class="puntaje__pj">2430</div>
+                            </div>
+                            <div class="tab-content">
+                                <p class="puesto">5</p><img src="./img/pj_icon.png" alt="" class="nav_iconpj">
+                                <div class="name__pj">ELLISXD</div>
+                                <div class="puntaje__pj">2000</div>
+                            </div>
+                        </div>
+                        <div id="tab1" class="tab">
+                            <a href="#tab1">2C2</a>
+                            <div class="tab-content">
+                                <p class="puesto">1</p><img src="./img/pj_icon.png" alt="" class="nav_iconpj">
+                                <div class="name__pj">Lunaria</div>
+                                <div class="puntaje__pj">3210</div>
+                            </div>
+                            <div class="tab-content">
+                                <p class="puesto">2</p><img src="./img/pj_icon.png" alt="" class="nav_iconpj">
+                                <div class="name__pj">Lucius</div>
+                                <div class="puntaje__pj">2800</div>
+                            </div>
+                            <div class="tab-content">
+                                <p class="puesto">3</p><img src="./img/pj_icon.png" alt="" class="nav_iconpj">
+                                <div class="name__pj">Ferchoox</div>
+                                <div class="puntaje__pj">2500</div>
+                            </div>
+                            <div class="tab-content">
+                                <p class="puesto">4</p><img src="./img/pj_icon.png" alt="" class="nav_iconpj">
+                                <div class="name__pj">Paladio</div>
+                                <div class="puntaje__pj">2330</div>
+                            </div>
+                            <div class="tab-content">
+                                <p class="puesto">5</p><img src="./img/pj_icon.png" alt="" class="nav_iconpj">
+                                <div class="name__pj">Jaimexx</div>
+                                <div class="puntaje__pj">2050</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <footer>
+        <div class="links-footer">
+            <div class="footer--logo">
+                <p class="nameserver">Firestorm</p>
+            </div>
+            <div class="links-delfooter">
+                <div class="left_links">
+                    <a href="#" class="iconos_redessociales"><img src="./img/facebook.svg" alt=""></a>
+                    <a href="#" class="iconos_redessociales"><img src="./img/discord.svg" alt=""></a>
+                    <a href="#" class="iconos_redessociales"><img src="./img/twitter.svg" alt=""></a>
+                    <a href="#" class="iconos_redessociales"><img src="./img/instagram.svg" alt=""></a>
+                </div>
+                <div class="rightodo">
+                    <div class="right_links">
+                        <a href="#" class="realms">Nuestros reinos</a>
+                        <a href="#" class="foro">Foro</a>
+                        <a href="#" class="preg">Preguntas frecuentes</a>
+                    </div>
+                    <div class="right">
+                        <a href="#" class="polit-priv">Politica de privacidad</a>
+                        <a href="#" class="term">Terminos de uso</a>
+                        <a href="#" class="polit-reem">Politica de reembolsos</a>
+                        <a href="#" class="imprint">Imprint</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="copyright">For k.net Fiestorm 0 2024</div>
+        </div>
+    </footer>
+</body>
+
+<script src="./js/clickenmenu.js"></script>
+<script src="./js/verificacion_inputs.js"></script>
+<script src="./js/menuslider.js"></script>
+<script src="./js/menuinteractivo_nobaje.js"></script>
+
+</html>
